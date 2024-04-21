@@ -164,7 +164,7 @@ function addProductToPage(product) {
 
     productBox.innerHTML = `
         <img src="${product.img}" alt="" class="product-img" />
-        <h2 class="product-title">${product.name}</h2>
+        <h2 class="product-title">${product.productName}</h2>
         <span class="price">$${product.price}</span>
         <i class="bx bx-shopping-bag add-cart"></i>
     `;
