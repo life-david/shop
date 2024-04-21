@@ -276,3 +276,32 @@ footer {
   }
 }   
 
+/* css category */
+
+.category {
+  position: relative;
+  max-width: 1068px;
+  width: 100%;
+  margin: 50px auto;
+}
+.fiter-bottoms{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+}
+button {
+  padding: 10px 20px;
+  font-size: 12px;
+  background: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.btn-category.active {
+  background-color: var(--main-color); /* Change to your preferred color */
+  color: white;
+}
+

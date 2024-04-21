@@ -147,15 +147,33 @@ document.addEventListener('DOMContentLoaded', async (event) => {
     try {
         const response = await fetch('https://script.google.com/macros/s/AKfycbxTk8Ez9-UQCvR7bPknsjsF08HcGahOvk866hspZul2dJz-m1k2OLPngFl64XODU3x2/exec');
         const data = await response.json();
-        for (let product of data.data) {
-            addProductToPage(product);
+        const categoryButtons = document.querySelectorAll('.btn-category');
+        for (let button of categoryButtons) {
+            button.addEventListener('click', () => {
+                // Remove the active class from all buttons
+                categoryButtons.forEach(btn => btn.classList.remove('active'));
+                // Add the active class to the clicked button
+                button.classList.add('active');
+                filterProducts(button.dataset.id, data.data);
+            });
         }
-        // Update the cart count after all products have been loaded
-        updateCartCount();
+        // Load all products when the page loads
+        filterProducts('all', data.data);
     } catch (error) {
         console.error('Error:', error);
     }
 });
+
+function filterProducts(category, products) {
+    const filteredProducts = category === 'all' ? products : products.filter(product => product.category === category);
+    const shopContent = document.querySelector('.shop-content');
+    shopContent.innerHTML = ''; // Clear the shop content
+    for (let product of filteredProducts) {
+        addProductToPage(product);
+    }
+    // Update the cart count after all products have been loaded
+    updateCartCount();
+}
 
 function addProductToPage(product) {
     var shopContent = document.querySelector('.shop-content');
