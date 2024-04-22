@@ -84,7 +84,6 @@ header {
   background: var(--bg-color);
   box-shadow: -4px 0 12px hsl(0 4% 15% / 10%);
   transition: 0.3s;
-  overflow: auto;
 }
 .cart.active {
   right: 0;
@@ -294,7 +293,7 @@ footer {
 
 }
 button {
-  padding: 10px 20px;
+  padding: 5px 10px;
   font-size: 16px;
   background: #fff;
   border: none;
