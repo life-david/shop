@@ -117,7 +117,6 @@ function addItemToCart(title, price, imageSrc) {
 }
 //
 function buyButtonClicked() {
-    alert('Thank you for your purchase')
     var cartItems = document.getElementsByClassName('cart-content')[0]
     while(cartItems.hasChildNodes()) {
         cartItems.removeChild(cartItems.firstChild)
@@ -192,3 +191,19 @@ function addProductToPage(product) {
     // Add event listener to the add-cart button
     productBox.getElementsByClassName('add-cart')[0].addEventListener('click', addToCartClicked);
 }
+
+// document.querySelector('.cart .btn-buy').addEventListener('click', () => {
+//     const shopContent = document.querySelector('.shop-content');
+//     const category = document.querySelector('.category');
+//     shopContent.innerHTML = createCheckoutHTML();
+//     category.style.display = 'none'; // Hide the category
+// });
+
+// function createCheckoutHTML() {
+//     return `
+//         <div class="checkout">
+//             <h2>Thanh toán</h2>
+//             <!-- Add your checkout form here -->
+//         </div>
+//     `;
+// }
