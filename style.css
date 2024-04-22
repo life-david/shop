@@ -84,6 +84,7 @@ header {
   background: var(--bg-color);
   box-shadow: -4px 0 12px hsl(0 4% 15% / 10%);
   transition: 0.3s;
+  overflow: auto;
 }
 .cart.active {
   right: 0;
